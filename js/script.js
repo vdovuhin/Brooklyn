@@ -36,26 +36,35 @@ const blogSwiper = new Swiper(".blog__swiper", {
 	breakpoints: {
     // when window width is >= 320px
     560: {
-      slidesPerView: 1.5,
-      
+      slidesPerView: 1.5,      
     },
     // when window width is >= 480px
     992: {
-      slidesPerView: 2,
-      
+      slidesPerView: 2,      
     },
     // when window width is >= 640px
     1000: {
-      slidesPerView: 3,
-     
+      slidesPerView: 3,     
     }
   },
-
-
   // If we need pagination
   pagination: {
     el: ".pagination",       
 		clickable: true,
 	
+  },
+});
+const responseSwiper = new Swiper(".response__swiper", {
+	// Optional parameters
+	
+	slidesPerView: 1,
+	
+  
+  loop: true,
+ 
+  // If we need pagination
+  pagination: {
+    el: ".pagination",
+    clickable: true,
   },
 });
