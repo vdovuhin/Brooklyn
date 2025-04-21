@@ -125,6 +125,7 @@ body {
   border-radius: 4px;
   border: 1px solid var(--Primary-500);
   color: var(--Primary-500);
+  transition: color 20s;
 }
 .button .-icon-arrow {
   text-align: center;
@@ -134,6 +135,7 @@ body {
   color: var(--Primary-600);
 }
 .button:hover {
+  transition: color 20s;
   color: var(--Primary-600);
 }
 
@@ -830,8 +832,9 @@ body {
   row-gap: 4.375rem;
 }
 .blog__swiper {
-  width: 82.5rem;
+  max-width: 82.5rem;
   overflow: hidden;
+  width: 100%;
 }
 .blog__item {
   display: flex;
@@ -933,17 +936,13 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.client__items[data-animated=true] {
-  overflow: hidden;
-  flex-wrap: nowrap;
-}
 .client__item {
   animation: scroll var(--_animation-duration, 10s) var(--_animation-direction, forwards) linear infinite;
 }
 
 @keyframes scroll {
-  100% {
-    transform: translate(50%);
+  to {
+    transform: translateX(calc(-100% - 5rem));
   }
 }
 .response__swiper {
@@ -1041,6 +1040,11 @@ body {
   background-color: var(--Gray-White);
   position: relative;
   z-index: 2;
+}
+@media (max-width: 25rem) {
+  .project__body {
+    justify-content: center;
+  }
 }
 .project__coordinates {
   max-width: 30rem;

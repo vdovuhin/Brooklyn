@@ -31,13 +31,13 @@ function addAnimation() {
 //========================================================================================================================================================
 const blogSwiper = new Swiper(".blog__swiper", {
   // Optional parameters
-  slidesPerView: 1,
+  slidesPerView: 'auto',
 
-  loop: true,
+  //loop: true,
   breakpoints: {
     // when window width is >= 320px
     560: {
-      slidesPerView: 1.2,
+      slidesPerView: 2,
       spaceBetween: 24,
     },
     // when window width is >= 480px
