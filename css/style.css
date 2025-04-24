@@ -125,7 +125,6 @@ body {
   border-radius: 4px;
   border: 1px solid var(--Primary-500);
   color: var(--Primary-500);
-  transition: color 20s;
 }
 .button .-icon-arrow {
   text-align: center;
@@ -133,16 +132,16 @@ body {
 }
 .button .-icon-arrow:hover {
   color: var(--Primary-600);
+  color: #0ec50e;
 }
 .button:hover {
-  transition: color 20s;
   color: var(--Primary-600);
 }
 
 .button-color {
   background: var(--Primary-500);
   color: var(--Gray-White);
-  transition: background-color 0.5s;
+  transition-duration: 1.5s;
 }
 .button-color .-icon-arrow {
   text-align: center;
@@ -150,7 +149,6 @@ body {
 }
 @media (any-hover: hover) {
   .button-color:hover {
-    transition: background-color 0.5s;
     color: var(--Gray-White);
     background-color: var(--Primary-600);
   }
@@ -922,28 +920,22 @@ body {
   line-height: 1.5; /* 150% */
 }
 
-.client__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 1.5rem;
-}
 .client__component {
   max-width: 36.0625rem;
+  margin-inline: auto;
 }
-.client__items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.client__component .component__titl {
+  margin-block-end: 1.5rem;
 }
-.client__item {
-  animation: scroll var(--_animation-duration, 10s) var(--_animation-direction, forwards) linear infinite;
+.client__component .component__text {
+  margin-block-end: 3.125rem;
+  text-align: center;
 }
-
-@keyframes scroll {
-  to {
-    transform: translateX(calc(-100% - 5rem));
-  }
+.client__component .component__text p:not(:last-child) {
+  margin-block-end: 1rem;
+}
+.client__wrapper {
+  max-width: 82.5rem;
 }
 .response__swiper {
   display: flex;
