@@ -1,0 +1,111 @@
+
+.menu {
+	// .menu__icon
+	&__icon {
+		position: relative;
+		z-index: 3;
+	}
+
+	// .menu__body
+
+	&__body {		
+			position: fixed;
+			inset-inline-start: 100%;
+			inset-block-start: 0;
+			inline-size: 100%;
+			block-size: 100%;
+			z-index: 2;
+			overflow: auto;
+			transition: inset-inline-start 0.3s;
+			padding: toRem(70) toRem(15) toRem(30);
+			background-color: var(--Gray-White); //колір подложкі
+
+			&::before {
+				content: '';
+				position: fixed;
+				block-size: toRem(60);
+				inline-size: 100%;
+				inset-inline-start: 100%;
+				inset-block-start: 0;
+				z-index: 36;
+				background-color: var(--Gray-White); //колір подложкі шапкі
+				transition: inset-inline-start 0.3s;		
+		}
+	}
+	// .menu__list
+	&__list {		 
+		flex-direction: column;
+		background-color: transparent;
+		align-items: flex-end;
+		row-gap: toRem(20);		
+	}
+
+	// .menu__item
+
+	&__item {
+	
+	}
+
+	// .menu__link
+
+	&__link {
+		font-size: toRem(28);
+	}
+}
+
+.icon-menu {
+	flex-shrink: 0;
+	flex-basis: 30px;
+	display: flex;
+	flex-direction: column;
+
+	span {
+		margin-block: toRem(6);
+	}
+
+	span,
+	&::before,
+	&::after {
+		transition: all 0.3s;
+		content: "";
+		flex-basis: 2px;		
+		width: 100%;
+		background-color: #1a1818;//колир рісок на бургере
+	}
+}
+
+.menu-open {
+	body {
+		overflow: hidden;
+	}
+	& .header{
+		&__logo{
+			position: relative;
+			z-index: 5;
+		}
+	}
+	
+	& .menu__body {
+			&::before {
+				inset-inline-start: 0;
+			}
+	
+			inset-inline-start: 0;
+	}
+	& .icon-menu {
+		justify-content: center;
+		span {
+			width: 0;
+			height: 0;
+			margin: 0;
+		}
+		&::before {
+			transform: rotate(45deg) translateY(toRem(3));
+		}
+
+		&::after {
+			transform: rotate(-45deg) translateY(toRem(-3));
+		}
+	}
+	
+}

@@ -1,0 +1,50 @@
+@use "sass:math";
+/* Підключення шрифтів */
+// Google Fonts (Plugin)
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:regular,500,600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,500&display=swap");
+
+//Локальне підключення шрифтів */
+// @import "_fonts.scss";
+// Іконочний шрифт
+@import url("iconsfont.css");
+/* Підключення шрифтів */
+/* Скидання стилів */
+@import url("reset.css");
+/* Скидання стилів */
+/* Змінні */
+@import url("variables.css");
+/* Змінні */
+
+/* Основні стилі */
+body {
+	font-family: "Work Sans";
+	background-color: #fff;
+	color: var(--Gray-600);
+	line-height: 1;
+	font-size: toRem(16);
+}
+.wrapper {
+	min-height: 100%;
+	overflow: clip; /* clip */
+
+	display: flex;
+	flex-direction: column;
+}
+.wrapper > main {
+	flex-grow: 1;
+}
+
+@import "_mixins.scss";
+// Компоненти
+@import "_components.scss";
+/* --------------------- */
+[class*="__container"] {
+	max-width: toRem(1350);
+	padding-inline: toRem(15);
+	margin-inline: auto;
+}
+@import "_header.scss";
+@import "_home.scss";
+@import "_footer.scss";
+

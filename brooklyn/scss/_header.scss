@@ -1,0 +1,136 @@
+.header {
+	position: sticky;
+	background-color: var(--Gray-White);
+	left: 0;
+	top: 0;
+	z-index: 10;
+	// .header__container
+	&__container {
+		display: flex;		
+		justify-content: space-between;
+		column-gap: toRem(10);		
+		flex-wrap: wrap;
+		padding-block: toRem(20);
+		align-items: center;				
+		@media (max-width: toEm(350)) {					
+			row-gap: toRem(20);
+		}
+	}
+	// .header__logo
+	&__logo {
+		flex-shrink: 0;
+		color: var(--Gray-900);		
+		span {
+			background-color: var(--Primary-500);
+			color: var(--Gray-White);
+		}
+	}
+	// .header__action
+	&__action {
+		display: flex;
+		align-items: center;
+		column-gap: toRem(10);
+	}
+	// .header__menu
+	&__menu {
+		@media (max-width: toEm(991)) {
+			order: 2;
+		}
+	}
+	// .header__butto
+	&__butto {
+		@media (max-width: toEm(991)) {
+			order: 1;
+		}
+	}
+}
+//========================================================================================================================================================
+.menu {
+	// .menu__icon
+	&__icon {
+		display: none;
+	}
+	// .menu__body
+
+	&__body {
+		@media (max-width: toRem(610)) {
+			position: fixed;
+
+			width: 100%;
+			height: 100%;
+			inset-inline-start: 0;
+			inset-block-start: 0;
+			&::before {
+				content: "";
+				width: 100%;
+				height: 100%;
+				transition: inset-inline-start 0.3s;
+			}
+		}
+	}
+	// .menu__list
+	&__list {
+		display: flex;
+		justify-content: center;
+		align-self: center;
+		position: relative;
+		z-index: 20;
+		@media (max-width: toRem(610)) {
+			flex-direction: column;
+			align-items: flex-end;
+		}
+	}
+	// .menu__item
+	&__item {
+	}
+	// .menu__link
+	&__link {
+		@include adaptiveValue("padding-block", 12, 10);
+		@include adaptiveValue("padding-inline", 24, 12);
+		color: #333;
+		font-size: toRem(16);
+		font-weight: 500;
+		line-height: 1.5; /* 150% */
+		transition: background-color,  0.5s;
+		@media (max-width: toRem(610)) {
+			font-size: toRem(36);
+		}
+		@media (any-hover: hover) {
+			&:hover {				
+				text-decoration: underline;
+			}
+		}
+		// .menu__link--activ
+		&--activ {
+			border-radius: toRem(4);
+			background: var(--Primary-500);
+			color: var(--Gray-White);
+			
+		}
+	}
+}
+.icon-menu {
+	@media (max-width: toRem(991)) {
+		display: flex;
+		width: 30px;
+		flex-direction: column;
+		span {
+			margin-block: toRem(8);
+			width: 100%;
+		}
+		span,
+		&::before,
+		&::after {
+			transition: all 0.5s;
+			content: "";
+			width: 100%;
+			flex-basis: toRem(4);
+			border-radius: toRem(5);
+			background-color: #000; //колир рісок на бургере
+		}
+	}
+}
+
+@media (max-width: toRem(991)) {
+	@import "component/menu.scss";
+}
